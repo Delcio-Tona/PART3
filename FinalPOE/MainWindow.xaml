@@ -1,0 +1,74 @@
+﻿<Window x:Class="PART3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+        xmlns:local="clr-namespace:PART3"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="610" Width="800">
+    <Grid Background="Blue" Margin="0,0,10,-146">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="426">
+
+            </RowDefinition>
+            <RowDefinition Height="504"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="239*">
+
+            </ColumnDefinition>
+            <ColumnDefinition Width="18*"/>
+            <ColumnDefinition Width="27*"/>
+            <ColumnDefinition Width="116*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="RECIPE" Foreground="Red" FontSize="36" FontWeight="Bold"  HorizontalAlignment="Right" Margin="0,20,201,0" VerticalAlignment="Top" Width="269" Height="77" Grid.ColumnSpan="4"/>
+        <Label Content="Recipe" FontWeight="Bold" HorizontalAlignment="Right" Margin="0,60,-24,0" VerticalAlignment="Top" Width="132" Height="26" Grid.Column="3"/>
+        <TextBox HorizontalAlignment="Left" Name="get_text" Margin="79,91,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="118" Height="44" Grid.Column="3"/>
+        <ListView Margin="18,166,340,205" Name="Lvevent" SelectionMode="Multiple"/>
+        <ListView Margin="18,90,342,291" Name="eventview" SelectionMode="Multiple"/>
+        <Button Content="Add Recipe" FontWeight="Bold" HorizontalAlignment="Left" Margin="352,103,0,0" VerticalAlignment="Top" Click="Button_Click" Height="44" Width="90"/>
+        <Label Content="Ingredient" FontWeight="Bold" HorizontalAlignment="Left" Margin="101,136,0,0" VerticalAlignment="Top" Width="110" Height="26" Grid.Column="3"/>
+        <TextBox HorizontalAlignment="Left" Name="get_ingredient_name" Margin="78,161,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="119" Height="60" RenderTransformOrigin="0.5,0.5" Grid.Column="3">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="0.685"/>
+                    <RotateTransform Angle="-0.133"/>
+                    <TranslateTransform X="2.232" Y="-0.004"/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+        <Button Content="Clear All Recipes" FontWeight="Bold" HorizontalAlignment="Left" Margin="353,258,0,0" VerticalAlignment="Top" Click="Button_Click_1" Height="50" Width="94"/>
+        <Label Content="Choose Food Group" FontWeight="Bold" HorizontalAlignment="Left" Margin="74,224,0,0" VerticalAlignment="Top" Width="119" Height="26" Grid.Column="3"/>
+        <ComboBox Name="foodtype" HorizontalAlignment="Left" Margin="79,254,0,0" VerticalAlignment="Top" Width="127" Height="43" Grid.Column="3">
+            <ComboBoxItem Content="Vegetables"/>
+            <ComboBoxItem Content="Fruits"/>
+            <ComboBoxItem Content="Dairy"/>
+            <ComboBoxItem Content="Meat"/>
+            <ComboBoxItem Content="Grains"/>
+        </ComboBox>
+        <Label Content="Calories" FontWeight="Bold" HorizontalAlignment="Left" Margin="107,294,0,0" VerticalAlignment="Top" Width="122" Height="26" Grid.Column="3"/>
+        <TextBox HorizontalAlignment="Left" Margin="79,320,0,0" Name="get_calory" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="124" Height="46" Grid.Column="3"/>
+        <Button Content="Filter Controls" FontWeight="Bold" HorizontalAlignment="Left" Margin="351,184,0,0" VerticalAlignment="Top" Width="94" Height="42" Click="Button_Click_2"/>
+        <ListView Name="Lv_for_ingredients" Margin="18,252,338,129" />
+        <Label Content="Recipes" FontWeight="Bold" HorizontalAlignment="Left" Margin="48,64,0,0" VerticalAlignment="Top" Width="105" Height="35"/>
+        <Label Content="List of Recipes" FontWeight="Bold" HorizontalAlignment="Left" Margin="31,136,0,0" VerticalAlignment="Top" Width="105" Height="34"/>
+        <Label Content="List of Ingredients" FontWeight="Bold"  HorizontalAlignment="Left" Margin="24,222,0,0" VerticalAlignment="Top" Width="114" Height="26"/>
+        <ListView Name="get_food_groop" Margin="18,63,339,401" Grid.Row="1"/>
+        <Label Content="Food Group" FontWeight="Bold" HorizontalAlignment="Left" Margin="35,29,0,0" VerticalAlignment="Top" Width="104" Height="26" Grid.Row="1"/>
+        <Label Content="Number of Step" FontWeight="Bold" HorizontalAlignment="Left" Margin="89,371,0,0" VerticalAlignment="Top" Width="114" Height="26" Grid.Column="3"/>
+        <TextBox Name="get_number_of_step"  HorizontalAlignment="Left" Margin="80,403,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="128" Height="41" Grid.Column="3" Grid.RowSpan="2"/>
+        <Label Content="List of Calories" FontWeight="Bold" HorizontalAlignment="Left" Margin="32,103,0,0" VerticalAlignment="Top" Width="118" Height="26" Grid.Row="1"/>
+        <ListView Name="LV_calories" Margin="18,133,339,298" Grid.Row="1"/>
+        <Label Content="Description Step" FontWeight="Bold" HorizontalAlignment="Left" Margin="87,22,0,0" VerticalAlignment="Top" Width="104" Height="26" Grid.Row="1" Grid.Column="3"/>
+        <TextBox Name="get_descrition" HorizontalAlignment="Left" Margin="80,54,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="128" Height="52" TextChanged="get_descrition_TextChanged" Grid.Column="3" Grid.Row="1"/>
+        <ListView Name="LV_nymber" Margin="18,408,338,478" Grid.RowSpan="2"/>
+        <Label Content="Number of Steps" FontWeight="Bold" HorizontalAlignment="Left" Margin="26,376,0,0" VerticalAlignment="Top" Width="104" Height="26"/>
+        <ListView Name="LV_description" Margin="18,328,338,50"/>
+        <Label Content="Description of Steps" FontWeight="Bold" HorizontalAlignment="Left" Margin="18,297,0,0" VerticalAlignment="Top" Width="124" Height="26"/>
+
+        <lvc:PieChart x:Name="FoodGroupPieChart" Margin="233,10,216,302" Grid.Row="1" Grid.ColumnSpan="4"/>
+        <Button Content="Chart" FontWeight="Bold" HorizontalAlignment="Left" Margin="343,348,0,0" VerticalAlignment="Top" Height="53" Width="116" Click="Button_Click_3"/>
+    </Grid>
+</Window>
